@@ -1,0 +1,28 @@
+{
+    "name": "webentwicklerat/emogrifier",
+    "description": "Converts CSS styles into inline HTML styles.",
+    "keywords": ["typo3", "emogrifier", "emogrify", "css", "inline", "style"],
+    "homepage": "https://github.com/WebentwicklerAt/typo3-emogrifier",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Gernot Leitgab",
+            "email": "typo3@webentwickler.at",
+            "homepage": "http://webentwickler.at"
+        }
+    ],
+    "require": {
+        "typo3/cms": ">=7.6.0 <=7.6.99"
+    },
+    "replace": {
+        "emogrifier": "self.version",
+        "typo3-ter/emogrifier": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebentwicklerAt\\Emogrifier\\": "Classes/",
+            "Pelago\\": "Resources/Private/PHP/emogrifier/Classes/"
+        }
+    }
+}
