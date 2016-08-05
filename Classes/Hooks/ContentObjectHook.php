@@ -12,6 +12,9 @@ namespace WebentwicklerAt\Emogrifier\Hooks;
  * LICENSE file that was distributed with this source code.
  */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use Pelago\Emogrifier;
 
@@ -38,6 +41,9 @@ class ContentObjectHook {
 			}
 
 			if ($content !== null && $css !== null) {
+				if (version_compare(VersionNumberUtility::getCurrentTypo3Version(), '7.0.0', '<') >= 0) {
+					GeneralUtility::requireOnce(ExtensionManagementUtility::extPath('emogrifier', 'Resources/Private/PHP/emogrifier/Classes/Emogrifier.php'));
+				}
 				$emogrifier = new Emogrifier($content, $css);
 				$content = $emogrifier->emogrify();
 			}

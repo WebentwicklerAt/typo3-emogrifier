@@ -11,6 +11,10 @@
 ChangeLog
 =========
 
+emogrifier 1.0.1, 2016-08-05
+----------------------------
+- Compatibility with TYPO3 6.2.
+
 emogrifier 1.0.0, 2016-07-28
 ----------------------------
 - Initial release.
