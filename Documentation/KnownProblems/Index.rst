@@ -11,4 +11,4 @@
 Known Problems
 ==============
 
-To report issues please use Forge or Git issue tracker mentioned under :ref:`links`.
+To report issues please use issue tracker mentioned under :ref:`links`.

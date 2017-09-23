@@ -28,3 +28,4 @@ Links
 -----
 
 * Git-Repository: https://github.com/WebentwicklerAt/typo3-emogrifier
+* Issues: https://github.com/WebentwicklerAt/typo3-emogrifier/issues
