@@ -51,6 +51,7 @@ In this example a page is defined, css is loaded with FILE and html is rendered 
 
    page = PAGE
    page.typeNum = 0
+   page.config.disableAllHeaderCode = 1
    page.10 = EMOGRIFIER
    page.10.css = COA
    page.10.css.10 = FILE

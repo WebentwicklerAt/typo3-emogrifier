@@ -27,5 +27,4 @@ It is intended for use in conjunction with direct_mail or similar extensions.
 Links
 -----
 
-* Forge: http://forge.typo3.org/projects/show/extension-emogrifier
 * Git-Repository: https://github.com/WebentwicklerAt/typo3-emogrifier
