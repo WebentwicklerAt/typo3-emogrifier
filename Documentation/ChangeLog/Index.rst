@@ -11,6 +11,10 @@
 ChangeLog
 =========
 
+emogrifier 1.1.1, 2017-09-23
+----------------------------
+- Update documentation.
+
 emogrifier 1.1.0, 2017-09-23
 ----------------------------
 - Update documentation.
