@@ -8,12 +8,11 @@
     "authors": [
         {
             "name": "Gernot Leitgab",
-            "email": "typo3@webentwickler.at",
-            "homepage": "http://webentwickler.at"
+            "homepage": "https://webentwickler.at"
         }
     ],
     "require": {
-        "typo3/cms": "~6.2.0 || ~7.6.0"
+        "typo3/cms": "~6.2.0 || ~7.6.0 || ~8.7.0"
     },
     "replace": {
         "emogrifier": "self.version",
