@@ -1,27 +1,34 @@
 {
-    "name": "webentwicklerat/emogrifier",
-    "description": "Converts CSS styles into inline HTML styles.",
-    "keywords": ["typo3", "emogrifier", "emogrify", "css", "inline", "style"],
-    "homepage": "https://github.com/WebentwicklerAt/typo3-emogrifier",
-    "type": "typo3-cms-extension",
-    "license": "GPL-2.0+",
-    "authors": [
-        {
-            "name": "Gernot Leitgab",
-            "homepage": "https://webentwickler.at"
-        }
-    ],
-    "require": {
-        "typo3/cms": "~6.2.0 || ~7.6.0 || ~8.7.0"
-    },
-    "replace": {
-        "emogrifier": "self.version",
-        "typo3-ter/emogrifier": "self.version"
-    },
-    "autoload": {
-        "psr-4": {
-            "WebentwicklerAt\\Emogrifier\\": "Classes/",
-            "Pelago\\": "Resources/Private/PHP/emogrifier/Classes/"
-        }
+  "name": "webentwicklerat/emogrifier",
+  "description": "Converts CSS styles into inline HTML styles.",
+  "keywords": [
+    "typo3",
+    "emogrifier",
+    "emogrify",
+    "css",
+    "inline",
+    "style"
+  ],
+  "homepage": "https://github.com/WebentwicklerAt/typo3-emogrifier",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Gernot Leitgab",
+      "homepage": "https://webentwickler.at"
     }
+  ],
+  "require": {
+    "typo3/cms": "~6.2.0 || ~7.6.0 || ~8.7.0"
+  },
+  "replace": {
+    "emogrifier": "self.version",
+    "typo3-ter/emogrifier": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "WebentwicklerAt\\Emogrifier\\": "Classes/",
+      "Pelago\\": "Resources/Private/PHP/emogrifier/Classes/"
+    }
+  }
 }

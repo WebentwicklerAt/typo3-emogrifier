@@ -1,4 +1,5 @@
 <?php
+
 namespace WebentwicklerAt\Emogrifier\Hooks;
 
 /*
@@ -18,37 +19,39 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use Pelago\Emogrifier;
 
-class ContentObjectHook {
-	/**
-	 * @param string $typoScriptObjectName Name of the object
-	 * @param array $typoScript TS configuration for this cObject
-	 * @param string $typoScriptKey A string label used for the internal debugging tracking.
-	 * @param ContentObjectRenderer $contentObject reference
-	 * @return string HTML output
-	 */
-	public function cObjGetSingleExt($typoScriptObjectName, array $typoScript, $typoScriptKey, ContentObjectRenderer $contentObject) {
-		$content = '';
+class ContentObjectHook
+{
+    /**
+     * @param string $typoScriptObjectName Name of the object
+     * @param array $typoScript TS configuration for this cObject
+     * @param string $typoScriptKey A string label used for the internal debugging tracking.
+     * @param ContentObjectRenderer $contentObject reference
+     * @return string HTML output
+     */
+    public function cObjGetSingleExt($typoScriptObjectName, array $typoScript, $typoScriptKey, ContentObjectRenderer $contentObject)
+    {
+        $content = '';
 
-		if ($typoScriptObjectName === 'EMOGRIFIER') {
-			$content = $css = null;
+        if ($typoScriptObjectName === 'EMOGRIFIER') {
+            $content = $css = null;
 
-			if (array_key_exists('html', $typoScript) && array_key_exists('html.', $typoScript)) {
-				$content = $contentObject->cObjGetSingle($typoScript['html'], $typoScript['html.']);
-			}
+            if (array_key_exists('html', $typoScript) && array_key_exists('html.', $typoScript)) {
+                $content = $contentObject->cObjGetSingle($typoScript['html'], $typoScript['html.']);
+            }
 
-			if (array_key_exists('css', $typoScript) && array_key_exists('css.', $typoScript)) {
-				$css = $contentObject->cObjGetSingle($typoScript['css'], $typoScript['css.']);
-			}
+            if (array_key_exists('css', $typoScript) && array_key_exists('css.', $typoScript)) {
+                $css = $contentObject->cObjGetSingle($typoScript['css'], $typoScript['css.']);
+            }
 
-			if ($content !== null && $css !== null) {
-				if (version_compare(VersionNumberUtility::getCurrentTypo3Version(), '7.0.0', '<') >= 0) {
-					GeneralUtility::requireOnce(ExtensionManagementUtility::extPath('emogrifier', 'Resources/Private/PHP/emogrifier/Classes/Emogrifier.php'));
-				}
-				$emogrifier = new Emogrifier($content, $css);
-				$content = $emogrifier->emogrify();
-			}
-		}
+            if ($content !== null && $css !== null) {
+                if (version_compare(VersionNumberUtility::getCurrentTypo3Version(), '7.0.0', '<') >= 0) {
+                    GeneralUtility::requireOnce(ExtensionManagementUtility::extPath('emogrifier', 'Resources/Private/PHP/emogrifier/Classes/Emogrifier.php'));
+                }
+                $emogrifier = new Emogrifier($content, $css);
+                $content = $emogrifier->emogrify();
+            }
+        }
 
-		return $content;
-	}
+        return $content;
+    }
 }
