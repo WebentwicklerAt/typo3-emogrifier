@@ -19,7 +19,7 @@
     }
   ],
   "require": {
-    "typo3/cms": "~6.2.0 || ~7.6.0 || ~8.7.0"
+    "typo3/cms": "~7.6.0 || ~8.7.0"
   },
   "replace": {
     "emogrifier": "self.version",

@@ -1,5 +1,5 @@
 <?php
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Emogrifier',
     'description' => 'Converts CSS styles into inline HTML styles.',
     'category' => 'fe',
@@ -10,17 +10,17 @@ $EM_CONF[$_EXTKEY] = array(
     'clearCacheOnLoad' => 0,
     'author' => 'Gernot Leitgab',
     'author_company' => 'Webentwickler.at',
-    'constraints' => array(
-        'depends' => array(
-            'typo3' => '6.2.0-8.7.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
-    'autoload' => array(
-        'psr-4' => array(
+    'constraints' => [
+        'depends' => [
+            'typo3' => '7.6.0-8.7.99',
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
             'WebentwicklerAt\\Emogrifier\\' => 'Classes/',
             'Pelago\\' => 'Resources/Private/PHP/emogrifier/Classes/',
-        ),
-    ),
-);
+        ],
+    ],
+];
