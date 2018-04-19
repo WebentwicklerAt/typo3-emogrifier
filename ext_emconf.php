@@ -20,7 +20,6 @@ $EM_CONF[$_EXTKEY] = [
     'autoload' => [
         'psr-4' => [
             'WebentwicklerAt\\Emogrifier\\' => 'Classes/',
-            'Pelago\\' => 'Resources/Private/PHP/emogrifier/Classes/',
         ],
     ],
 ];
