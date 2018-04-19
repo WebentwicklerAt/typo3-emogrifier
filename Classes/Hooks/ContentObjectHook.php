@@ -39,8 +39,9 @@ class ContentObjectHook
             if (array_key_exists('css', $typoScript) && array_key_exists('css.', $typoScript)) {
                 $css = $contentObject->cObjGetSingle($typoScript['css'], $typoScript['css.']);
             }
+            $extractContent = (array_key_exists('extractContent', $typoScript) && $typoScript['extractContent']);
 
-            $content = EmogrifierUtility::emogrify($content, $css);
+            $content = EmogrifierUtility::emogrify($content, $css, $extractContent);
         }
 
         return $content;

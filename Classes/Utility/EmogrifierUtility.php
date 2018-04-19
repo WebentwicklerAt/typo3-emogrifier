@@ -21,9 +21,10 @@ class EmogrifierUtility
     /**
      * @param string $content
      * @param string $css
+     * @param bool $extractContent
      * @return string
      */
-    public static function emogrify($content, $css)
+    public static function emogrify($content, $css, $extractContent)
     {
         if ($content !== null && $css !== null) {
             if (!class_exists('\\Pelago\\Emogrifier')) {
@@ -35,6 +36,10 @@ class EmogrifierUtility
             }
             $emogrifier = new \Pelago\Emogrifier($content, $css);
             $content = $emogrifier->emogrify();
+
+            if ($extractContent) {
+                $content = preg_replace('/^.*<body[^>]*>(.*?)<\/body>.*$/sU', '$1', $content);
+            }
         }
 
         return $content;
