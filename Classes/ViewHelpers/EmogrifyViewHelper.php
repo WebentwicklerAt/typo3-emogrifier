@@ -22,7 +22,7 @@ class EmogrifyViewHelper extends AbstractViewHelper
     {
         parent::initializeArguments();
         $this->registerArgument('css', 'string', 'CSS as a string.');
-        $this->registerArgument('extractContent', 'bool', 'Extract emogrified content from within body tags.', false, true);
+        $this->registerArgument('extractContent', 'bool', 'Extract emogrified content from within body tags.', false, false);
     }
 
     /**
