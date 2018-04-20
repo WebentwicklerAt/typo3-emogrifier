@@ -11,6 +11,17 @@
 ChangeLog
 =========
 
+emogrifier 2.0.0, 2018-04-20
+----------------------------
+- Update documentation.
+- Add view helper.
+- Add user function.
+- Add option to extract content.
+- Update emogrifier to V2.0.0.
+- Update integration of emogrifier.
+- Remove compatibility with TYPO3 6.2.
+- Reformat code.
+
 emogrifier 1.1.1, 2017-09-23
 ----------------------------
 - Update documentation.

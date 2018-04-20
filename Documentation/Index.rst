@@ -14,47 +14,48 @@ emogrifier
 
 .. only:: html
 
-	:Classification:
-		emogrifier
+    :Classification:
+        emogrifier
 
-	:Version:
-		|release|
+    :Version:
+        |release|
 
-	:Language:
-		en
+    :Language:
+        en
 
-	:Description:
-		Manual covering TYPO3 extension <emogrifier>
+    :Description:
+        Manual covering TYPO3 extension <emogrifier>
 
-	:Keywords:
-		forAdmins, forDevelopers, forBeginners
+    :Keywords:
+        forAdmins, forDevelopers, forBeginners
 
-	:Copyright:
-		2016-2017
+    :Copyright:
+        2016-2018
 
-	:Author:
-		Gernot Leitgab
+    :Author:
+        Gernot Leitgab
 
-	:License:
-		This document is published under the Open Content License
-		available from http://www.opencontent.org/opl.shtml
+    :License:
+        This document is published under the Open Content License
+        available from http://www.opencontent.org/opl.shtml
 
-	:Rendered:
-		|today|
+    :Rendered:
+        |today|
 
-	The content of this document is related to TYPO3,
-	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
+    The content of this document is related to TYPO3,
+    a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
 
 
-	**Table of Contents**
+    **Table of Contents**
 
 .. toctree::
-	:maxdepth: 5
-	:titlesonly:
-	:glob:
+    :maxdepth: 5
+    :titlesonly:
+    :glob:
 
-	Introduction/Index
-	Configuration/Index
-	KnownProblems/Index
-	ToDoList/Index
-	ChangeLog/Index
+    Introduction/Index
+    Usage/Index
+    Examples/Index
+    KnownProblems/Index
+    ToDoList/Index
+    ChangeLog/Index
