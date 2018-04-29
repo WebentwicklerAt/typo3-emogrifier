@@ -14,7 +14,6 @@ namespace WebentwicklerAt\Emogrifier\Utility;
  */
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class EmogrifierUtility
 {
@@ -32,7 +31,7 @@ class EmogrifierUtility
                     'emogrifier',
                     'Resources/Private/Php/Emogrifier.phar/vendor/autoload.php'
                 );
-                GeneralUtility::requireOnce('phar://' . $pharPath);
+                require_once 'phar://' . $pharPath;
             }
             $emogrifier = new \Pelago\Emogrifier($content, $css);
             $content = $emogrifier->emogrify();
