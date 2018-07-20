@@ -11,6 +11,13 @@
 Known Problems
 ==============
 
+Installation using symlinks
+---------------------------
+
+This extension must be installed directly in typo3conf/ext. Symlinking it will
+not work.
+
+
 PAGE as html source
 -------------------
 
