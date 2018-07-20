@@ -13,9 +13,6 @@ namespace WebentwicklerAt\Emogrifier\Utility;
  * LICENSE file that was distributed with this source code.
  */
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-
 class EmogrifierUtility
 {
     /**
@@ -28,11 +25,9 @@ class EmogrifierUtility
     {
         if ($content !== null && $css !== null) {
             if (!class_exists('\\Pelago\\Emogrifier')) {
-                $pharPath = ExtensionManagementUtility::extPath(
-                    'emogrifier',
-                    'Resources/Private/Php/Emogrifier.phar/vendor/autoload.php'
-                );
-                GeneralUtility::requireOnce('phar://' . $pharPath);
+                $pharPath = PATH_site . 'typo3conf/ext/emogrifier/Resources/Private/Php/Emogrifier.phar';
+                require_once $pharPath;
+                require_once 'phar://' . $pharPath . '/vendor/autoload.php';
             }
             $emogrifier = new \Pelago\Emogrifier($content, $css);
             $content = $emogrifier->emogrify();
