@@ -15,6 +15,9 @@ namespace WebentwicklerAt\Emogrifier\Utility;
 
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class EmogrifierUtility
 {
@@ -26,6 +29,9 @@ class EmogrifierUtility
      */
     public static function emogrify($content, $css, $extractContent)
     {
+
+        $settings = self::getSettings();
+
         if ($content !== null && $css !== null) {
             if (!class_exists('\\Pelago\\Emogrifier')) {
                 $pharPath = ExtensionManagementUtility::extPath(
@@ -35,6 +41,9 @@ class EmogrifierUtility
                 GeneralUtility::requireOnce('phar://' . $pharPath);
             }
             $emogrifier = new \Pelago\Emogrifier($content, $css);
+            if ($settings['disableStyleBlocksParsing']) {
+                $emogrifier->disableStyleBlocksParsing();
+            }
             $content = $emogrifier->emogrify();
 
             if ($extractContent) {
@@ -43,5 +52,24 @@ class EmogrifierUtility
         }
 
         return $content;
+    }
+
+    /**
+     * Gets the Settings
+     *
+     * @return array
+     * @throws \TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException
+     */
+    public function getSettings() {
+            $settings = [];
+            /* @var $objectManager \TYPO3\CMS\Extbase\Object\ObjectManager */
+            $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+            /* @var $configurationManager \TYPO3\CMS\Extbase\Configuration\ConfigurationManager */
+            $configurationManager = $objectManager->get(ConfigurationManager::class);
+            $settings = $configurationManager->getConfiguration(
+                ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
+                'emogrifier'
+            );
+        return $settings;
     }
 }
