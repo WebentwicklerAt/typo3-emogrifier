@@ -20,7 +20,7 @@
   ],
   "require": {
     "typo3/cms-core": ">=8.7.0 <=9.5.99",
-    "pelago/emogrifier": "~2.0.0"
+    "pelago/emogrifier": "~2.2.0"
   },
   "replace": {
     "typo3-ter/emogrifier": "self.version"
@@ -34,7 +34,7 @@
     "update-libs": [
       "mkdir -p Resources/Private/Php",
       "@composer global require clue/phar-composer",
-      "$HOME/.composer/vendor/bin/phar-composer build pelago/emogrifier:~2.0.0 Resources/Private/Php/Emogrifier.phar"
+      "$HOME/.composer/vendor/bin/phar-composer build pelago/emogrifier:~2.2.0 Resources/Private/Php/Emogrifier.phar"
     ],
     "pack": [
       "git archive -o ../emogrifier.zip HEAD",
