@@ -23,7 +23,6 @@
     "pelago/emogrifier": "~2.0.0"
   },
   "replace": {
-    "emogrifier": "self.version",
     "typo3-ter/emogrifier": "self.version"
   },
   "autoload": {
