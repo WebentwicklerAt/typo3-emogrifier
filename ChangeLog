@@ -1,3 +1,12 @@
+emogrifier 3.0.0, 2019-09-21
+----------------------------
+- Update documentation.
+- Update emogrifier to version 2.2.0.
+- Remove deprecated replace statement from composer.json.
+- Remove support of TYPO3 7 LTS, add support for TYPO3 9 LTS.
+- Add pack script for TER upload.
+- Replace GeneralUtility::requireOnce().
+
 emogrifier 2.0.0, 2018-04-20
 ----------------------------
 - Update documentation.
