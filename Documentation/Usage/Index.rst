@@ -39,7 +39,7 @@ All methods offer the following configuration options:
          **Example:** ::
 
             page.10 = EMOGRIFIER
-            page.10.css = FILE
+            page.10.css = FLUIDTEMPLATE
             page.10.css.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
 
 .. container:: table-row

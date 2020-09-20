@@ -29,7 +29,7 @@ Example:
         10 {
             css = COA
             css {
-                10 = FILE
+                10 = FLUIDTEMPLATE
                 10.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
             }
             html = FLUIDTEMPLATE
@@ -59,7 +59,7 @@ Example:
         10 {
             css = COA
             css {
-                10 = FILE
+                10 = FLUIDTEMPLATE
                 10.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
             }
             html = FLUIDTEMPLATE

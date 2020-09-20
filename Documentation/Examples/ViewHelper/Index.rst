@@ -18,7 +18,7 @@ Example:
 
     lib.css = COA
     lib.css {
-        10 = FILE
+        10 = FLUIDTEMPLATE
         10.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
     }
 

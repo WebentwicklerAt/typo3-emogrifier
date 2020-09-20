@@ -11,6 +11,13 @@
 ChangeLog
 =========
 
+emogrifier 4.0.0, 2020-09-20
+----------------------------
+- Update documentation.
+- Update emogrifier to version 4.0.0.
+- Drop support of non-composer installations.
+- Drop support of TYPO3 8 LTS, add support for TYPO3 10 LTS.
+
 emogrifier 3.0.0, 2019-09-21
 ----------------------------
 - Update documentation.

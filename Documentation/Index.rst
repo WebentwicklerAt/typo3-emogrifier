@@ -30,7 +30,7 @@ emogrifier
         forAdmins, forDevelopers, forBeginners
 
     :Copyright:
-        2016-2019
+        2016-2020
 
     :Author:
         Gernot Leitgab

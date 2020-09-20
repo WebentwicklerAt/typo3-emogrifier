@@ -21,6 +21,8 @@ This extension converts CSS styles into inline HTML styles.
 
 It is intended for use in conjunction with direct_mail or similar extensions.
 
+Installation with composer is required to get necessary dependencies.
+
 
 .. _links:
 

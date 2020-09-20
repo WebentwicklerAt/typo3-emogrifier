@@ -28,7 +28,7 @@ Example:
         config.disableAllHeaderCode = 1
         10 = EMOGRIFIER
         10 {
-            css = FILE
+            css = FLUIDTEMPLATE
             css.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
             html = PAGE
             html {
