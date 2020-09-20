@@ -2,14 +2,14 @@
 
 namespace WebentwicklerAt\Emogrifier\ViewHelpers;
 
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use WebentwicklerAt\Emogrifier\Utility\EmogrifierUtility;
 
 class EmogrifyViewHelper extends AbstractViewHelper
 {
     /**
-     * @var boolean
+     * @var bool
      */
     protected $escapeOutput = false;
 

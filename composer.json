@@ -19,7 +19,7 @@
     }
   ],
   "require": {
-    "typo3/cms-core": ">=8.7.0 <=9.5.99",
+    "typo3/cms-core": "^9.5.0 || ^10.4.0",
     "pelago/emogrifier": "~2.2.0"
   },
   "replace": {
