@@ -20,7 +20,7 @@
   ],
   "require": {
     "typo3/cms-core": "^9.5.0 || ^10.4.0",
-    "pelago/emogrifier": "~2.2.0"
+    "pelago/emogrifier": "^4.0.0"
   },
   "replace": {
     "typo3-ter/emogrifier": "self.version"
