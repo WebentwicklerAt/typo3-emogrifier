@@ -11,6 +11,11 @@
 ChangeLog
 =========
 
+emogrifier 4.0.1, 2020-09-20
+----------------------------
+- Update documentation.
+- Version requirement.
+
 emogrifier 4.0.0, 2020-09-20
 ----------------------------
 - Update documentation.
