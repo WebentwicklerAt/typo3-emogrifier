@@ -31,14 +31,8 @@
     }
   },
   "scripts": {
-    "update-libs": [
-      "mkdir -p Resources/Private/Php",
-      "@composer global require clue/phar-composer",
-      "$HOME/.composer/vendor/bin/phar-composer build pelago/emogrifier:~2.2.0 Resources/Private/Php/Emogrifier.phar"
-    ],
     "pack": [
-      "git archive -o ../emogrifier.zip HEAD",
-      "zip -ru ../emogrifier.zip Resources/Private/Php/Emogrifier.phar"
+      "git archive -o ../emogrifier.zip HEAD"
     ]
   }
 }

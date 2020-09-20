@@ -26,13 +26,6 @@ class EmogrifierUtility
     public static function emogrify($content, $css, $extractContent)
     {
         if ($content !== null && $css !== null) {
-            if (!class_exists('\\Pelago\\Emogrifier')) {
-                $pharPath = ExtensionManagementUtility::extPath(
-                    'emogrifier',
-                    'Resources/Private/Php/Emogrifier.phar/vendor/autoload.php'
-                );
-                require_once 'phar://' . $pharPath;
-            }
             $emogrifier = new \Pelago\Emogrifier($content, $css);
             $content = $emogrifier->emogrify();
 
