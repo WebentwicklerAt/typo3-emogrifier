@@ -30,6 +30,11 @@
       "WebentwicklerAt\\Emogrifier\\": "Classes/"
     }
   },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "emogrifier"
+    }
+  },
   "scripts": {
     "pack": [
       "git archive -o ../emogrifier.zip HEAD"
