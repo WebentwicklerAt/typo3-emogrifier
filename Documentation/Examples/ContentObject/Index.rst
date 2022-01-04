@@ -27,11 +27,8 @@ Example:
         }
         10 = EMOGRIFIER
         10 {
-            css = COA
-            css {
-                10 = FLUIDTEMPLATE
-                10.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
-            }
+            css = FLUIDTEMPLATE
+            css.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
             html = FLUIDTEMPLATE
             html.file = EXT:{$projectKey}/Resources/Private/Templates/Newsletter.html
         }
