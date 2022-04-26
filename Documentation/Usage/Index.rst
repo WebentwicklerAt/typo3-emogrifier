@@ -82,4 +82,23 @@ All methods offer the following configuration options:
             page.10 = EMOGRIFIER
             page.10.extractContent = 1
 
+.. container:: table-row
+
+   Property
+         options
+
+   Data type
+         array
+
+   Default
+         []
+
+   Description
+         Set options for CssInline.
+
+         **Example:** ::
+
+            page.10 = EMOGRIFIER
+            page.10.options.disableStyleBlocksParsing = 1
+
 .. ###### END~OF~TABLE ######

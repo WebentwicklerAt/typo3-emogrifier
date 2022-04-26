@@ -31,6 +31,7 @@ Example:
             css.file = EXT:{$projectKey}/Resources/Public/Css/Newsletter.css
             html = FLUIDTEMPLATE
             html.file = EXT:{$projectKey}/Resources/Private/Templates/Newsletter.html
+            options.disableStyleBlocksParsing = 1
         }
     }
 

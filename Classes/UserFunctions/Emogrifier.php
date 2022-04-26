@@ -33,7 +33,12 @@ class Emogrifier
         }
         $extractContent = (array_key_exists('extractContent', $typoScript) && $typoScript['extractContent']);
 
-        $content = EmogrifierUtility::emogrify($content, $css, $extractContent);
+        $options = [];
+        if (array_key_exists('options.', $typoScript) && is_array($typoScript['options.'])) {
+            $options = $typoScript['options.'];
+        }
+
+        $content = EmogrifierUtility::emogrify($content, $css, $extractContent, $options);
 
         return $content;
     }

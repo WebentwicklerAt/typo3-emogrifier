@@ -21,12 +21,29 @@ class EmogrifierUtility
      * @param string $content
      * @param string $css
      * @param bool $extractContent
+     * @param array $options
      * @return string
      */
-    public static function emogrify($content, $css, $extractContent)
+    public static function emogrify($content, $css, $extractContent, $options = [])
     {
         if ($content !== null && $css !== null) {
-            $content = CssInliner::fromHtml($content)->inlineCss($css)->render();
+            $cssInliner = CssInliner::fromHtml($content);
+            if (!empty($options['disableStyleBlocksParsing'])) {
+                $cssInliner = $cssInliner->disableStyleBlocksParsing();
+            }
+            if (!empty($options['disableInlineStyleAttributesParsing'])) {
+                $cssInliner = $cssInliner->disableInlineStyleAttributesParsing();
+            }
+            if (!empty($options['addAllowedMediaType'])) {
+                $cssInliner = $cssInliner->addAllowedMediaType($options['addAllowedMediaType']);
+            }
+            if (!empty($options['removeAllowedMediaType'])) {
+                $cssInliner = $cssInliner->removeAllowedMediaType($options['removeAllowedMediaType']);
+            }
+            if (!empty($options['addExcludedSelector'])) {
+                $cssInliner = $cssInliner->addExcludedSelector($options['addExcludedSelector']);
+            }
+            $content = $cssInliner->inlineCss($css)->render();
 
             if ($extractContent) {
                 $content = preg_replace('/^.*<body[^>]*>(.*?)<\/body>.*$/sU', '$1', $content);
