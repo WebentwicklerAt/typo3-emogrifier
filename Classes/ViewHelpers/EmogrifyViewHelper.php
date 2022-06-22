@@ -2,8 +2,10 @@
 
 namespace WebentwicklerAt\Emogrifier\ViewHelpers;
 
+use Symfony\Component\CssSelector\Exception\ParseException;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Exception;
 use WebentwicklerAt\Emogrifier\Utility\EmogrifierUtility;
 
 class EmogrifyViewHelper extends AbstractViewHelper
@@ -16,7 +18,7 @@ class EmogrifyViewHelper extends AbstractViewHelper
     /**
      * Initialize arguments.
      *
-     * @throws \TYPO3Fluid\Fluid\Core\ViewHelper\Exception
+     * @throws Exception
      */
     public function initializeArguments()
     {
@@ -28,6 +30,7 @@ class EmogrifyViewHelper extends AbstractViewHelper
 
     /**
      * @return string
+     * @throws ParseException
      */
     public function render()
     {

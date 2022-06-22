@@ -1,3 +1,9 @@
+emogrifier 5.0.0, 2022-06-22
+----------------------------
+- Use new content object registration to add EMOGRIFIER TypoScript object type
+- Add TYPO3 11 compatibility.
+- Remove TYPO3 9 compatibility
+
 emogrifier 4.0.1, 2020-09-20
 ----------------------------
 - Update documentation.
