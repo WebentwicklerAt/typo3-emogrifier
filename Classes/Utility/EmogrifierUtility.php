@@ -14,6 +14,7 @@ namespace WebentwicklerAt\Emogrifier\Utility;
  */
 
 use Pelago\Emogrifier\CssInliner;
+use Symfony\Component\CssSelector\Exception\ParseException;
 
 class EmogrifierUtility
 {
@@ -23,6 +24,7 @@ class EmogrifierUtility
      * @param bool $extractContent
      * @param array $options
      * @return string
+     * @throws ParseException
      */
     public static function emogrify($content, $css, $extractContent, $options = [])
     {

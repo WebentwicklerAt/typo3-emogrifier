@@ -13,6 +13,7 @@ namespace WebentwicklerAt\Emogrifier\UserFunctions;
  * LICENSE file that was distributed with this source code.
  */
 
+use Symfony\Component\CssSelector\Exception\ParseException;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use WebentwicklerAt\Emogrifier\Utility\EmogrifierUtility;
 
@@ -22,6 +23,7 @@ class Emogrifier
      * @param string $content
      * @param array $typoScript
      * @return string
+     * @throws ParseException
      */
     public function emogrify($content, array $typoScript)
     {
@@ -38,9 +40,7 @@ class Emogrifier
             $options = $typoScript['options.'];
         }
 
-        $content = EmogrifierUtility::emogrify($content, $css, $extractContent, $options);
-
-        return $content;
+        return EmogrifierUtility::emogrify($content, $css, $extractContent, $options);
     }
 
     /**

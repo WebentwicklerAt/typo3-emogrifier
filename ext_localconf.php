@@ -1,13 +1,6 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+defined('TYPO3_MODE') or die();
 
-call_user_func(function ($_EXTKEY) {
-    if (TYPO3_MODE === 'FE') {
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['cObjTypeAndClass'][$_EXTKEY] = [
-            'EMOGRIFIER',
-            \WebentwicklerAt\Emogrifier\Hooks\ContentObjectHook::class
-        ];
-    }
-}, $_EXTKEY);
+$GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects'] = array_merge($GLOBALS['TYPO3_CONF_VARS']['FE']['ContentObjects'], [
+    'EMOGRIFIER' => \WebentwicklerAt\Emogrifier\ContentObject\EmogrifierContentObject::class
+]);

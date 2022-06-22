@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<?xml version="1.1" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" x="0px" y="0px">
+  <title>ext_icon</title>
 	<path fill="#e86a4d" d="M0 0h64v64H0z"/>
 	<path fill="#FFF" d="M18 15v34c0 .552.448 1 1 1h26c.552 0 1-.448 1-1V22l-8-8H19c-.552 0-1 .448-1 1z"/>
 	<path opacity=".6" fill="#e86a4d" d="M38 21v-7l8 8h-7c-.552 0-1-.448-1-1z"/>
