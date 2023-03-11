@@ -1,0 +1,56 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'typo3-cms-extension',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'bfdd6764e7de3d99e2a370810f27dc71df06524e',
+        'name' => 'webentwicklerat/emogrifier',
+        'dev' => true,
+    ),
+    'versions' => array(
+        'pelago/emogrifier' => array(
+            'pretty_version' => 'v4.0.0',
+            'version' => '4.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pelago/emogrifier',
+            'aliases' => array(),
+            'reference' => 'f6fd679303c6e6861b5ff29af221f684729d8fd9',
+            'dev_requirement' => false,
+        ),
+        'symfony/css-selector' => array(
+            'pretty_version' => 'v5.4.21',
+            'version' => '5.4.21.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/css-selector',
+            'aliases' => array(),
+            'reference' => '95f3c7468db1da8cc360b24fa2a26e7cefcb355d',
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-php80' => array(
+            'pretty_version' => 'v1.27.0',
+            'version' => '1.27.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-php80',
+            'aliases' => array(),
+            'reference' => '7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936',
+            'dev_requirement' => false,
+        ),
+        'typo3-ter/emogrifier' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'dev-master',
+            ),
+        ),
+        'webentwicklerat/emogrifier' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'typo3-cms-extension',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'bfdd6764e7de3d99e2a370810f27dc71df06524e',
+            'dev_requirement' => false,
+        ),
+    ),
+);
