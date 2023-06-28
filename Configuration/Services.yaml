@@ -1,0 +1,14 @@
+services:
+  # general settings
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  WebentwicklerAt\Emogrifier\:
+    resource: '../Classes/*'
+
+  WebentwicklerAt\Emogrifier\ContentObject\EmogrifierContentObject:
+    tags:
+      - name: frontend.contentobject
+        identifier: 'EMOGRIFIER'
