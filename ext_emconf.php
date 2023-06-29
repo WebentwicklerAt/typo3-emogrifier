@@ -4,13 +4,13 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Converts CSS styles into inline HTML styles.',
     'category' => 'fe',
     'clearCacheOnLoad' => true,
-    'version' => '5.0.0',
+    'version' => '6.0.1',
     'state' => 'stable',
     'author' => 'Gernot Leitgab',
     'author_company' => 'Webentwickler.at',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-11.5.99',
+            'typo3' => '11.5.0-11.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
