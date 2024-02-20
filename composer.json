@@ -19,8 +19,8 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^11.5.0 || ^12.4.0",
-    "pelago/emogrifier": "^7.0.0"
+    "typo3/cms-core": "^11.5.0 || ^12.4.0 || ^13.0.0",
+    "pelago/emogrifier": "^7.2.0"
   },
   "replace": {
     "typo3-ter/emogrifier": "self.version"
