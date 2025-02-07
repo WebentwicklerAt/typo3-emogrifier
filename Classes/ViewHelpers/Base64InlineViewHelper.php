@@ -21,10 +21,7 @@ class Base64InlineViewHelper extends AbstractViewHelper
      */
     protected $escapeOutput = false;
 
-    /**
-     * @return void
-     */
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         parent::initializeArguments();
         $this->registerArgument('path', 'string', 'The path and filename of the resource file.', true);
@@ -40,7 +37,7 @@ class Base64InlineViewHelper extends AbstractViewHelper
         array $arguments,
         \Closure $renderChildrenClosure,
         RenderingContextInterface $renderingContext
-    )
+    ): string
     {
         $path = GeneralUtility::getFileAbsFileName($arguments['path']);
         $content = GeneralUtility::getUrl($path);

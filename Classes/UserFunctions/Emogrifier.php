@@ -13,22 +13,18 @@ namespace WebentwicklerAt\Emogrifier\UserFunctions;
  * LICENSE file that was distributed with this source code.
  */
 
-use Symfony\Component\CssSelector\Exception\ParseException;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use WebentwicklerAt\Emogrifier\Utility\EmogrifierUtility;
 
 class Emogrifier
 {
-    /**
-     * @param string $content
-     * @param array $typoScript
-     * @return string
-     * @throws ParseException
-     */
-    public function emogrify($content, array $typoScript)
+    public function emogrify(string $content, array $typoScript): string
     {
-        $css = null;
+        $cssFile = $css = null;
 
+        if (array_key_exists('cssFile', $typoScript)) {
+            $cssFile = (string)$typoScript['cssFile'];
+        }
         if (array_key_exists('css', $typoScript) && array_key_exists('css.', $typoScript)) {
             $contentObject = $this->getContentObject();
             $css = $contentObject->cObjGetSingle($typoScript['css'], $typoScript['css.']);
@@ -40,13 +36,10 @@ class Emogrifier
             $options = $typoScript['options.'];
         }
 
-        return EmogrifierUtility::emogrify($content, $css, $extractContent, $options);
+        return EmogrifierUtility::emogrify($content, $cssFile, $css, $extractContent, $options);
     }
 
-    /**
-     * @return ContentObjectRenderer
-     */
-    protected function getContentObject()
+    protected function getContentObject(): ContentObjectRenderer
     {
         return $GLOBALS['TSFE']->cObj;
     }

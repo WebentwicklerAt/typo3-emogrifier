@@ -9,13 +9,16 @@ use WebentwicklerAt\Emogrifier\Utility\EmogrifierUtility;
 
 class EmogrifierContentObject extends AbstractContentObject
 {
-
-    public function render($conf = [])
+    public function render($conf = []): string
     {
-        $content = $css = null;
+        $content = $cssFile = $css = null;
 
         if (array_key_exists('html', $conf) && array_key_exists('html.', $conf)) {
             $content = $this->cObj->cObjGetSingle($conf['html'], $conf['html.']);
+        }
+
+        if (array_key_exists('cssFile', $conf)) {
+            $cssFile = (string)$conf['cssFile'];
         }
 
         if (array_key_exists('css', $conf) && array_key_exists('css.', $conf)) {
@@ -48,6 +51,6 @@ class EmogrifierContentObject extends AbstractContentObject
             $options = $conf['options.'];
         }
 
-        return EmogrifierUtility::emogrify($content, $css, $extractContent, $options);
+        return EmogrifierUtility::emogrify($content, $cssFile, $css, $extractContent, $options);
     }
 }

@@ -13,22 +13,30 @@ namespace WebentwicklerAt\Emogrifier\Utility;
  * LICENSE file that was distributed with this source code.
  */
 
+use BK2K\BootstrapPackage\Service\CompileService;
 use Pelago\Emogrifier\CssInliner;
-use Symfony\Component\CssSelector\Exception\ParseException;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class EmogrifierUtility
 {
-    /**
-     * @param string $content
-     * @param string $css
-     * @param bool $extractContent
-     * @param array $options
-     * @return string
-     * @throws ParseException
-     */
-    public static function emogrify($content, $css, $extractContent, $options = [])
+    public static function getCssContents(string $cssFile): ?string
     {
-        if ($content !== null && $css !== null) {
+        if (
+            ExtensionManagementUtility::isLoaded('bootstrap_package')
+            && class_exists(CompileService::class)
+        ) {
+            $compileService = GeneralUtility::makeInstance(CompileService::class);
+            $cssFile = $compileService->getCompiledFile($GLOBALS['TYPO3_REQUEST'], $cssFile);
+        }
+        $path = GeneralUtility::getFileAbsFileName($cssFile);
+        $css = GeneralUtility::getUrl($path);
+        return is_string($css) ? $css : null;
+    }
+
+    public static function emogrify(?string $content, ?string $cssFile, ?string $css, bool $extractContent, array $options = []): string
+    {
+        if ($content !== null && ($cssFile !== null || $css !== null)) {
             $cssInliner = CssInliner::fromHtml($content);
             if (!empty($options['disableStyleBlocksParsing'])) {
                 $cssInliner = $cssInliner->disableStyleBlocksParsing();
@@ -44,6 +52,10 @@ class EmogrifierUtility
             }
             if (!empty($options['addExcludedSelector'])) {
                 $cssInliner = $cssInliner->addExcludedSelector($options['addExcludedSelector']);
+            }
+            if ($cssFile) {
+                $cssContents = (string)self::getCssContents($cssFile);
+                $css = $cssContents . $css;
             }
             $content = $cssInliner->inlineCss($css)->render();
 
