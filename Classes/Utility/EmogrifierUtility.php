@@ -27,7 +27,8 @@ class EmogrifierUtility
             && class_exists(CompileService::class)
         ) {
             $compileService = GeneralUtility::makeInstance(CompileService::class);
-            $cssFile = $compileService->getCompiledFile($GLOBALS['TYPO3_REQUEST'], $cssFile);
+            $request = $GLOBALS['TYPO3_REQUEST'] ?? new ServerRequest();
+            $cssFile = $compileService->getCompiledFile($request, $cssFile);
         }
         $path = GeneralUtility::getFileAbsFileName($cssFile);
         $css = GeneralUtility::getUrl($path);
