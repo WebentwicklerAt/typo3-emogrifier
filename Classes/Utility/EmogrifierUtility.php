@@ -15,6 +15,7 @@ namespace WebentwicklerAt\Emogrifier\Utility;
 
 use BK2K\BootstrapPackage\Service\CompileService;
 use Pelago\Emogrifier\CssInliner;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
