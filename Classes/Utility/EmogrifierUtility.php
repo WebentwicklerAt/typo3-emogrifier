@@ -15,7 +15,11 @@ namespace WebentwicklerAt\Emogrifier\Utility;
 
 use BK2K\BootstrapPackage\Service\CompileService;
 use Pelago\Emogrifier\CssInliner;
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Http\ServerRequest;
+use TYPO3\CMS\Core\Http\ServerRequestFactory;
+use TYPO3\CMS\Core\TypoScript\AST\Node\RootNode;
+use TYPO3\CMS\Core\TypoScript\FrontendTypoScript;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -28,7 +32,7 @@ class EmogrifierUtility
             && class_exists(CompileService::class)
         ) {
             $compileService = GeneralUtility::makeInstance(CompileService::class);
-            $request = $GLOBALS['TYPO3_REQUEST'] ?? new ServerRequest();
+            $request = self::getRequest();
             $cssFile = $compileService->getCompiledFile($request, $cssFile);
         }
         $path = GeneralUtility::getFileAbsFileName($cssFile);
@@ -68,4 +72,26 @@ class EmogrifierUtility
 
         return $content;
     }
+
+    protected static function getServerRequest(): ServerRequest
+    {
+        return $GLOBALS['TYPO3_REQUEST'] ?? ServerRequestFactory::fromGlobals();
+    }
+
+    protected static function getRequest(): ServerRequestInterface
+    {
+        $request = self::getServerRequest();
+        $setupTree = new RootNode();
+        $setupArray = [];
+        /** @var FrontendTypoScript $frontendTypoScript */
+        $frontendTypoScript = GeneralUtility::makeInstance(
+            FrontendTypoScript::class,
+            $setupTree,
+            $setupArray,
+        );
+        $frontendTypoScript->setSetupArray([]);
+        $request = $request->withAttribute('frontend.typoscript', $frontendTypoScript);
+        return $request;
+    }
 }
+
