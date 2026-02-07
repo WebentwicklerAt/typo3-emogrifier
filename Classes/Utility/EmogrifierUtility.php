@@ -81,13 +81,17 @@ class EmogrifierUtility
     protected static function getRequest(): ServerRequestInterface
     {
         $request = self::getServerRequest();
-        $setupTree = new RootNode();
-        $setupArray = [];
+        $settingsTree = new RootNode();
+        $settingsConditionList = [];
+        $flatSettings = [];
+        $setupConditionList = [];
         /** @var FrontendTypoScript $frontendTypoScript */
         $frontendTypoScript = GeneralUtility::makeInstance(
             FrontendTypoScript::class,
-            $setupTree,
-            $setupArray,
+            $settingsTree,
+            $settingsConditionList,
+            $flatSettings,
+            $setupConditionList
         );
         $frontendTypoScript->setSetupArray([]);
         $request = $request->withAttribute('frontend.typoscript', $frontendTypoScript);
