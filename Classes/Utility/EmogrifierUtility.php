@@ -27,8 +27,10 @@ class EmogrifierUtility
 {
     public static function getCssContents(string $cssFile): ?string
     {
+        $extension = strtolower(pathinfo($cssFile, PATHINFO_EXTENSION));
         if (
-            ExtensionManagementUtility::isLoaded('bootstrap_package')
+            $extension === 'scss'
+            && ExtensionManagementUtility::isLoaded('bootstrap_package')
             && class_exists(CompileService::class)
         ) {
             $compileService = GeneralUtility::makeInstance(CompileService::class);
